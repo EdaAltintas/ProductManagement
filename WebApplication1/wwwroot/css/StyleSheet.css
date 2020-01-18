@@ -1,0 +1,74 @@
+﻿
+.share:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.label {
+    color: white;
+    padding: 8px;
+}
+
+.success {
+    background-color: #4CAF50;
+}
+/* Green */
+.info {
+    background-color: #2196F3;
+}
+/* Blue */
+.warning {
+    background-color: #ff9800;
+}
+/* Orange */
+.danger {
+    background-color: #f44336;
+}
+/* Red */
+.other {
+    background-color: #e7e7e7;
+    color: black;
+}
+/* Gray */
+.btn-minus {
+    cursor: pointer;
+    font-size: 7px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    border-right: 0;
+}
+
+.btn-plus {
+    cursor: pointer;
+    font-size: 7px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    border-left: 0;
+}
+.title-attr {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: black;
+}
+div.section > div {
+    width: 100%;
+    display: inline-flex;
+}
+div.section > div > input {
+        margin: 0;
+        padding-left: 5px;
+        font-size: 10px;
+        padding-right: 5px;
+        max-width: 18%;
+        text-align: center;
+    }

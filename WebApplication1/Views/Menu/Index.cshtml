@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication1.Models.Menu>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.menuAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UstMenuID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiraNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AktifPasif)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Controller)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Action)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.menuAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UstMenuID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiraNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AktifPasif)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Controller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Action)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.menuID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.menuID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.menuID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.Menu
+
+<h4>Menu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="menuAdi" class="control-label"></label>
+                <input asp-for="menuAdi" class="form-control" />
+                <span asp-validation-for="menuAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="desc" class="control-label">İcon</label>
+                @*<input asp-for="desc" class="form-control" />*@
+                <select asp-for="menuID" class="form-control" asp-items= "ViewBag.iconlar"> </select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="UstMenuID" class="control-label"></label>
+                <input asp-for="UstMenuID" class="form-control" />
+                <span asp-validation-for="UstMenuID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiraNo" class="control-label"></label>
+                <input asp-for="SiraNo" class="form-control" />
+                <span asp-validation-for="SiraNo" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AktifPasif" /> @Html.DisplayNameFor(model => model.AktifPasif)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Controller" class="control-label"></label>
+                <input asp-for="Controller" class="form-control" />
+                <span asp-validation-for="Controller" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Action" class="control-label"></label>
+                <input asp-for="Action" class="form-control" />
+                <span asp-validation-for="Action" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebApplication1.Models.Product>
+ <h1>Ürün Listesi</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Ürün Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                No
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th width="250">
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th width="300"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            int sayac = 1;
+        }
+     @foreach (var item in Model) {
+        <tr>
+            <td>
+                @sayac
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td width="400">
+                @Html.DisplayFor(modelItem => item.ProductDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td >
+                @{
+                    if (!String.IsNullOrEmpty(item.Img))
+                    {
+                        <img src="~/images/@item.Img" asp-append-version="true" class="img-thumbnail" />
+                    }
+                    else
+                    {
+                        <img src="~/images/noimage.png" asp-append-version="true" class="img-thumbnail" />
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category.CategoryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detay</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
+            </td>
+        </tr>
+    sayac++;
+}
+    </tbody>
+</table>

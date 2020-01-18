@@ -1,0 +1,54 @@
+﻿@model WebApplication1.Models.Menu
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.menuAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.menuAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UstMenuID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UstMenuID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SiraNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SiraNo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AktifPasif)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AktifPasif)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Controller)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Controller)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Action)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Action)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.menuID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
